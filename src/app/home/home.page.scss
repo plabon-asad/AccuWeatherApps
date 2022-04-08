@@ -1,3 +1,11 @@
+ion-content {
+  --background: var(--aw-color-light)
+}
+
+ion-searchbar, ion-card, .card-2-flex {
+  --background: var(--aw-color-deep);
+}
+
 .graphics-status {
   width: 70px;
   display: inline-block;
