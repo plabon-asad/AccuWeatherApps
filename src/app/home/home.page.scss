@@ -1,8 +1,22 @@
 ion-content {
-  --background: var(--aw-color-light)
+  --background: var(--aw-color-light);
 }
 
-ion-searchbar, ion-card, .card-2-flex {
+ion-toolbar, ion-list, ion-item {
+  --background: var(--aw-color-light);
+  background: var(--aw-color-light);
+}
+
+ion-searchbar {
+  --placeholder-color: var(--icon-color);
+}
+
+.card-2-flex {
+  background: var(--aw-color-deep);
+  color: #666666;
+}
+
+ion-searchbar, ion-card {
   --background: var(--aw-color-deep);
 }
 
@@ -31,4 +45,5 @@ ion-card[color="dark"] {
       font-weight: bold;
     }
   }
+  .date {text-align: center;}
 }
