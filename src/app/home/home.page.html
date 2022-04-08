@@ -1,20 +1,115 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header [translucent]="true">-->
+<!--  <ion-toolbar>-->
+<!--    <ion-icon name="home"></ion-icon>-->
+<!--    <ion-title>Weather Forecast</ion-title>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="apps"></ion-icon>
+          <ion-title class="ion-text-center" size="large">Weather Forecast</ion-title>
+        </ion-item>
+      </ion-list>
+
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-searchbar placeholder="Search Your City"></ion-searchbar>
+
+
+    <ion-card>
+      <ion-card-header>
+        <ion-grid>
+          <ion-row class="ion-justify-content-between">
+            <ion-col><strong>Today</strong></ion-col>
+            <ion-col class="ion-text-end"><span>Friday, 01 April</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-justify-content-between ion-align-items-center">
+            <ion-col>
+              +<strong>30</strong>
+            </ion-col>
+            <ion-col class="ion-text-end">
+              <ion-img src="./assets/icon/few-clouds.png" class="graphics-status"></ion-img>
+              <!--              <ion-icon src="/assets/icon/few-clouds.png"></ion-icon>-->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div class="ion-text-center">
+          <ion-icon name="pin"></ion-icon>
+          <span>Colombo, Bangladesh</span>
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="card-2-flex">
+            <ion-icon name="map"></ion-icon>
+            <div class="content">
+              <h4>92%</h4>
+              <span>Humidity</span>
+            </div>
+          </div>
+
+        </ion-col>
+        <ion-col>
+          <div class="card-2-flex">
+            <ion-icon name="map"></ion-icon>
+            <div class="content">
+              <h4>92%</h4>
+              <span>Humidity</span>
+            </div>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <div class="card-2-flex">
+            <ion-icon name="map"></ion-icon>
+            <div class="content">
+              <h4>92%</h4>
+              <span>Humidity</span>
+            </div>
+          </div>
+
+        </ion-col>
+        <ion-col size="4">
+          <div class="card-2-flex">
+            <ion-icon name="map"></ion-icon>
+            <div class="content">
+              <h4>92%</h4>
+              <span>Humidity</span>
+            </div>
+          </div>
+
+        </ion-col>
+        <ion-col size="4">
+          <div class="card-2-flex">
+            <ion-icon name="map"></ion-icon>
+            <div class="content">
+              <h4>92%</h4>
+              <span>Humidity</span>
+            </div>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </div>
 </ion-content>

@@ -3,8 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    url: 'http://dataservice.accuweather.com/locations/v1/cities/search',
+    key: 'EDt36HGc39s55R4h2LXyJ28uBA5SC88f',
+  },
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
