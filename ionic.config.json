@@ -1,5 +1,7 @@
 {
   "name": "AccuWeatherApps",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
