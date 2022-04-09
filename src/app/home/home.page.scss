@@ -2,13 +2,25 @@ ion-content {
   --background: var(--aw-color-light);
 }
 
-ion-toolbar, ion-list, ion-item {
+ion-toolbar, ion-list, ion-item.heading {
   --background: var(--aw-color-light);
   background: var(--aw-color-light);
 }
 
+ion-item.transparent {
+  --background: var(--aw-color-deep);
+  background: var(--aw-color-deep);
+  color: white;
+  --padding-start: 0;
+}
+
 ion-searchbar {
   --placeholder-color: var(--icon-color);
+}
+
+.big-font {
+  font-size: 80px;
+  color: white;
 }
 
 .card-2-flex {

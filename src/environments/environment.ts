@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   api: {
-    url: 'http://dataservice.accuweather.com/locations/v1/cities/search',
-    key: 'EDt36HGc39s55R4h2LXyJ28uBA5SC88f',
+    baseUrl: 'http://dataservice.accuweather.com/locations/v1',
+    currentDataUrl: 'http://dataservice.accuweather.com/currentconditions/v1',
+    key: 'U9wNKTSZGhBriNPJoSMXVXFS1sWDl9vK', //EDt36HGc39s55R4h2LXyJ28uBA5SC88f
   },
 };
 
