@@ -19,7 +19,10 @@
   </ion-header>
 
   <div id="container">
-    <ion-searchbar placeholder="Search Your City"></ion-searchbar>
+    <ion-searchbar
+      placeholder="Search Your City"
+      (ionChange)="doSearch($event)"
+      debounce="1000" (ionClear)="clearSearch($event)"></ion-searchbar>
 
     <!-- Today's weather status of Users location -->
     <ion-card>
@@ -27,7 +30,7 @@
         <ion-list lines="none">
           <ion-item>
             <strong>Today</strong>
-            <span slot="end">Friday, 01 April</span>
+            <span slot="end">{{ (currentData?.LocalObservationDateTime) | date:'EEEE, d MMMM' }}</span>
           </ion-item>
         </ion-list>
 
@@ -38,13 +41,19 @@
         <ion-grid>
           <ion-row class="ion-justify-content-between ion-align-items-center ion-padding-bottom">
             <ion-col>
-              <strong class="big-font">30</strong>
+              <div style="position: relative">
+                <strong class="big-font">{{ currentData?.Temperature?.Metric?.Value }}</strong>
+                <span *ngIf="currentData?.Temperature?.Metric?.Unit"
+                      class="deg-position">°{{ currentData?.Temperature?.Metric?.Unit }}</span>
+              </div>
             </ion-col>
             <ion-col class="ion-text-end">
-              <ion-img src="./assets/icon/few-clouds.png" class="graphics-status"></ion-img>
-              <!--              <ion-icon src="/assets/icon/few-clouds.png"></ion-icon>-->
+              <ion-img src="./assets/icon/{{weatherIcon ? weatherIcon : 'mist'}}.png" class="graphics-status"></ion-img>
+<!--              <ion-img src="./assets/icon/38.png" class="graphics-status"></ion-img>-->
+
+              <!--              <ion-icon src="/assets/icon/38.png"></ion-icon>-->
               <ion-chip>
-                <ion-label color="secondary">Mostly Cloudy</ion-label>
+                <ion-label color="secondary">{{ currentData?.WeatherText }}</ion-label>
               </ion-chip>
             </ion-col>
           </ion-row>
@@ -53,26 +62,24 @@
         <ion-list>
           <ion-item class="transparent">
             <strong>Location</strong>
-            <label slot="end">Dhaka</label>
+            <label slot="end">{{ address }}</label>
           </ion-item>
-          <ion-item class="transparent">
-            <strong>Air Quality</strong>
-            <label slot="end">Fair</label>
-          </ion-item>
+          <!--          <ion-item class="transparent">-->
+          <!--            <strong>Air Quality</strong>-->
+          <!--            <label slot="end">Fair</label>-->
+          <!--          </ion-item>-->
           <ion-item class="transparent">
             <strong>Wind</strong>
-            <label slot="end">S 19 km/h</label>
+            <label
+              slot="end"> {{ currentData?.Wind?.Speed?.Metric?.Value + ' ' + currentData?.Wind?.Speed?.Metric?.Unit }} </label>
           </ion-item>
           <ion-item class="transparent">
             <strong>Wind Gusts</strong>
-            <label slot="end">19 km/h</label>
+            <label
+              slot="end">{{ currentData?.WindGust?.Speed?.Metric?.Value + ' ' + currentData?.WindGust?.Speed?.Metric?.Unit }}</label>
           </ion-item>
         </ion-list>
 
-<!--        <div class="ion-padding-top ion-text-center">-->
-<!--          <ion-icon name="pin"></ion-icon>-->
-<!--          <span>Colombo, Bangladesh</span>-->
-<!--        </div>-->
       </ion-card-content>
 
     </ion-card>
@@ -84,7 +91,7 @@
           <div class="card-2-flex">
             <ion-icon name="map"></ion-icon>
             <div class="content">
-              <h4>92%</h4>
+              <h4>{{ currentData?.RelativeHumidity }}%</h4>
               <span>Humidity</span>
             </div>
           </div>
@@ -94,7 +101,7 @@
           <div class="card-2-flex">
             <ion-icon name="map"></ion-icon>
             <div class="content">
-              <h4>92HPa</h4>
+              <h4>{{ currentData?.Pressure?.Metric?.Value + currentData?.Pressure?.Metric?.Unit}}</h4>
               <span>Pressure</span>
             </div>
           </div>

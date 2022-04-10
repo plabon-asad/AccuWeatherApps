@@ -19,4 +19,9 @@ export class ApiDataService {
   getCurrentData(countryKey) {
     return this.http.get<any>( `${environment.api.currentDataUrl}/${countryKey}?apikey=${environment.api.key}&details=true` );
   }
+
+  search(city) {
+    console.log('Search city param', city);
+    return this.http.get(`${environment.api.baseUrl}/cities/search?apikey=${environment.api.key}&q=${city}&details=true`);
+  }
 }

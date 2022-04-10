@@ -6,4 +6,10 @@ import { Injectable } from '@angular/core';
 export class HelperService {
 
   constructor() { }
+
+  refresh() {
+    setTimeout( ()=> {
+      location.reload();
+    }, 1000);
+  }
 }
