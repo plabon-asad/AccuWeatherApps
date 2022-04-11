@@ -6,14 +6,10 @@
 <!--</ion-header>-->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header class="ion-padding-start ion-padding-end" collapse="condense">
     <ion-toolbar>
-      <ion-list lines="none">
-        <ion-item class="heading">
-          <ion-icon name="apps"></ion-icon>
-          <ion-title class="ion-text-center" size="large">Weather Forecast</ion-title>
-        </ion-item>
-      </ion-list>
+      <ion-icon slot="start" name="apps"></ion-icon>
+      <ion-title class="ion-text-center" size="large">Weather Forecast</ion-title>
 
     </ion-toolbar>
   </ion-header>
@@ -89,7 +85,8 @@
       <ion-row>
         <ion-col>
           <div class="card-2-flex">
-            <ion-icon name="map"></ion-icon>
+            <img src="./assets/icon/humidity.png" alt="Humidity">
+<!--            <ion-icon src="./assets/icon/humidity.png"></ion-icon>-->
             <div class="content">
               <h4>{{ currentData?.RelativeHumidity }}%</h4>
               <span>Humidity</span>
@@ -99,7 +96,8 @@
         </ion-col>
         <ion-col>
           <div class="card-2-flex">
-            <ion-icon name="map"></ion-icon>
+            <img src="./assets/icon/pressure.png" alt="pressure">
+<!--            <ion-icon src="./assets/icon/pressure.png"></ion-icon>-->
             <div class="content">
               <h4>{{ currentData?.Pressure?.Metric?.Value + currentData?.Pressure?.Metric?.Unit}}</h4>
               <span>Pressure</span>

@@ -1,5 +1,15 @@
 ion-content {
   --background: var(--aw-color-light);
+  ion-header{
+
+    ion-icon{
+      margin-top: 9px;
+    }
+    ion-icon, ion-title {
+      color: white;
+      font-size: 25px;
+    }
+  }
 }
 
 ion-toolbar, ion-list, ion-item.heading {
@@ -15,7 +25,12 @@ ion-item.transparent {
 }
 
 ion-searchbar {
-  --placeholder-color: var(--icon-color);
+  --color: var(--aw-color-light);
+  --placeholder-color: var(--aw-color-light);
+  --placeholder-font-weight: bold;
+  --placeholder-opacity: 0.8;
+  --clear-button-color: var(--ion-color-danger);
+  --icon-color: var(--aw-color-light);
 }
 
 .big-font {
@@ -42,19 +57,26 @@ ion-searchbar, ion-card {
   display: inline-block;
 }
 
-ion-card[color="dark"] {
-  min-height: 100px;
+ion-card {
+  margin: 6px 16px;
+}
+
+ion-grid {
+  padding-left: 11px;
+  padding-right: 11px;
 }
 
 .card-2-flex {
   box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
-  //background-color: blue;
-  //color: white;
   padding: 16px;
   border-radius: 8px;
-  ion-icon {font-size: 30px;margin-right: 16px;}
+  color: white;
+  img {
+    width: 30px;
+    margin-right: 16px;
+  }
   .content {
     h4 {
       margin: initial;
