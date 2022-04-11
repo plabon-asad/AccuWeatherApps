@@ -8,7 +8,7 @@ export const environment = {
     baseUrl: 'http://dataservice.accuweather.com/locations/v1',
     currentDataUrl: 'http://dataservice.accuweather.com/currentconditions/v1',
     forecastUrl: 'http://dataservice.accuweather.com/forecasts/v1/daily/5day',
-    key: 'Gdi1ozRsvFmgKqXOcGqZ0rbcjBTTJGrJ',
+    key: 'OA6UcnoNqQkjEyqefnh24aEddFB5YXtp',
   },
 };
 
