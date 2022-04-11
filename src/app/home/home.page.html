@@ -44,7 +44,7 @@
               </div>
             </ion-col>
             <ion-col class="ion-text-end">
-              <ion-img src="./assets/icon/{{weatherIcon ? weatherIcon : 'mist'}}.png" class="graphics-status"></ion-img>
+              <ion-img *ngIf="weatherIcon" src="./assets/img/{{weatherIcon}}-s.png" class="graphics-status"></ion-img>
 <!--              <ion-img src="./assets/icon/38.png" class="graphics-status"></ion-img>-->
 
               <!--              <ion-icon src="/assets/icon/38.png"></ion-icon>-->
@@ -81,7 +81,7 @@
     </ion-card>
 
     <!-- Humidity & Air pressure -->
-    <ion-grid>
+    <ion-grid class="grid-space">
       <ion-row>
         <ion-col>
           <div class="card-2-flex">
@@ -109,7 +109,7 @@
     </ion-grid>
 
     <!-- Upcoming weather -->
-    <ion-grid>
+    <ion-grid class="grid-space">
       <ion-row>
         <ion-col size="4">
           <div class="card-2-flex">
