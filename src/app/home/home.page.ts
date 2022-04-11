@@ -3,8 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
 import {NativeGeocoder, NativeGeocoderOptions, NativeGeocoderResult} from '@ionic-native/native-geocoder/ngx';
-import {ApiDataService} from "../services/api-data.service";
-import {HelperService} from "../services/helper.service";
+import {ApiDataService} from '../services/api-data.service';
+import {HelperService} from '../services/helper.service';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +29,17 @@ export class HomePage implements OnInit {
   public countryKey: string;
   currentData: any;
   cities: [];
+  forecastData: any;
+  forecastTempUnit: any;
+  upComing1stDayData: any;
+  upComing2ndDayData: any;
+  upComing3rdDayData: any;
+  minTempUpcoming1stDay: any;
+  maxTempUpcoming1stDay: any;
+  minTempUpcoming2ndDay: any;
+  maxTempUpcoming2ndDay: any;
+  minTempUpcoming3rdDay: any;
+  maxTempUpcoming3rdDay: any;
 
   constructor(
     private http: HttpClient, private geolocation: Geolocation,
@@ -38,7 +49,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    // this.getCurrentCoordinates();
+    this.getCurrentCoordinates();
   }
 
   getCurrentCoordinates() {
@@ -64,7 +75,9 @@ export class HomePage implements OnInit {
           this.address = resp.LocalizedName;
           console.log('Location Name: ', this.address);
           console.log('Country Code Key: ', this.countryKey);
+          /** Get countryKey as params */
           this.loadCurrentData(this.countryKey);
+          this.loadForecast(this.countryKey);
         }
 
       }, error => {
@@ -98,7 +111,7 @@ export class HomePage implements OnInit {
 
   doSearch(event) {
     console.log('Search Data: ', event.detail.value);
-    let cityName = event.detail.value;
+    const cityName = event.detail.value;
 
 
     if (cityName) {
@@ -120,6 +133,35 @@ export class HomePage implements OnInit {
         }
       );
     }
+  }
+
+  loadForecast(countryKey) {
+    this.apiSrvc.dayForecast(countryKey).subscribe(
+      resp => {
+        console.log('5day Forecast Response: ', resp);
+        // this.forecastData = resp.DailyForecasts;
+        // console.log('5day Forecasts: ', this.forecastData);
+
+        this.upComing1stDayData = resp.DailyForecasts[1];
+        this.upComing2ndDayData = resp.DailyForecasts[2];
+        this.upComing3rdDayData = resp.DailyForecasts[3];
+
+        // temperature data
+        this.minTempUpcoming1stDay = resp.DailyForecasts[1].Temperature.Minimum.Value;
+        this.minTempUpcoming2ndDay = resp.DailyForecasts[2].Temperature.Minimum.Value;
+        this.minTempUpcoming3rdDay = resp.DailyForecasts[3].Temperature.Minimum.Value;
+        this.maxTempUpcoming1stDay = resp.DailyForecasts[1].Temperature.Maximum.Value;
+        this.maxTempUpcoming2ndDay = resp.DailyForecasts[2].Temperature.Maximum.Value;
+        this.maxTempUpcoming3rdDay = resp.DailyForecasts[3].Temperature.Maximum.Value;
+
+        this.forecastTempUnit = resp.DailyForecasts[1].Temperature.Minimum.Unit;
+        console.log('Temp Unit Forecasts: ', this.forecastTempUnit);
+
+      },
+      err => {
+        console.log('5day Forecast Error: ');
+      }
+    );
   }
 
 

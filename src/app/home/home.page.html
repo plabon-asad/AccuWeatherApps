@@ -116,8 +116,8 @@
         <ion-col size="4">
           <div class="card-2-flex">
             <div class="content date">
-              <h4>+30 <span>0</span><strong>C</strong></h4>
-              <span>Friday</span>
+              <h4>{{ minTempUpcoming1stDay }} - {{ maxTempUpcoming1stDay }}<strong>°{{ forecastTempUnit }}</strong></h4>
+              <span>{{ upComing1stDayData?.Date | date:'EEEE'}}</span>
             </div>
           </div>
 
@@ -125,8 +125,8 @@
         <ion-col size="4">
           <div class="card-2-flex">
             <div class="content date">
-              <h4>+30 <span>0</span><strong>C</strong></h4>
-              <span>Saturday</span>
+              <h4>{{ minTempUpcoming2ndDay }} - {{ maxTempUpcoming2ndDay }}<strong>°{{ forecastTempUnit }}</strong></h4>
+              <span>{{ upComing2ndDayData?.Date | date:'EEEE'}}</span>
             </div>
           </div>
 
@@ -134,8 +134,8 @@
         <ion-col size="4">
           <div class="card-2-flex">
             <div class="content date">
-              <h4>+30 <span>0</span><strong>C</strong></h4>
-              <span>Sunday</span>
+              <h4>{{ minTempUpcoming3rdDay }} - {{ maxTempUpcoming3rdDay }}<strong>°{{ forecastTempUnit }}</strong></h4>
+              <span>{{ upComing3rdDayData?.Date | date:'EEEE'}}</span>
             </div>
           </div>
 

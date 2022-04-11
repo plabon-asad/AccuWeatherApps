@@ -22,6 +22,10 @@ export class ApiDataService {
 
   search(city) {
     console.log('Search city param', city);
-    return this.http.get(`${environment.api.baseUrl}/cities/search?apikey=${environment.api.key}&q=${city}&details=true`);
+    return this.http.get<any>(`${environment.api.baseUrl}/cities/search?apikey=${environment.api.key}&q=${city}&details=true`);
+  }
+
+  dayForecast(countryKey) {
+    return this.http.get<any>( `${environment.api.forecastUrl}/${countryKey}?apikey=${environment.api.key}&details=false&metric=true` );
   }
 }
