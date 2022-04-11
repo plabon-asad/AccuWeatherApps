@@ -40,6 +40,7 @@ export class HomePage implements OnInit {
   maxTempUpcoming2ndDay: any;
   minTempUpcoming3rdDay: any;
   maxTempUpcoming3rdDay: any;
+  currentDate: any;
 
   constructor(
     private http: HttpClient, private geolocation: Geolocation,
@@ -156,6 +157,9 @@ export class HomePage implements OnInit {
 
         this.forecastTempUnit = resp.DailyForecasts[1].Temperature.Minimum.Unit;
         console.log('Temp Unit Forecasts: ', this.forecastTempUnit);
+
+        this.currentDate = resp.Headline.EffectiveDate;
+        console.log('Current Date: ', this.currentDate);
 
       },
       err => {
