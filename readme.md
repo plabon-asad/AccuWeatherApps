@@ -5,3 +5,6 @@
 Required node `v16.10.0`<br>
 Use node `nvm use --delete-prefix v16.10.0`<br>
 Check node version `node -v`
+Clone project,
+Go to project directory and run `npm install`
+After that run project by command `ionic serve` and enjoy
