@@ -1,8 +1,5 @@
+# <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png" height="30" > [AccuWeatherApps](https://developer.accuweather.com/apis) - Weather App
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
-
-# AccuWeatherApps - Weather App
 ![GitHub](https://img.shields.io/github/license/plabon-asad/AccuWeatherApps?color=green)
 ![GitHub repo size](https://img.shields.io/github/repo-size/plabon-asad/AccuWeatherApps)
 ![GitHub language count](https://img.shields.io/github/languages/count/plabon-asad/AccuWeatherApps)
@@ -45,11 +42,13 @@ After that run project by command `ionic serve` and enjoy
 
 ## Contributing
 
-Contributions are always welcome!
+Please feel free to contribute by adding new templates to this project:
 
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
+1. Fork it (<https://github.com/plabon-asad/AccuWeatherApps.git>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
 
 ## 🚀 About Me
